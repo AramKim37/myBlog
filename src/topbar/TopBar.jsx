@@ -1,4 +1,5 @@
-import "./topBar.css";
+import "./topbar.css";
+import Me from "../images/aramkim.jpg";
 
 export default function TobBar() {
   return (
@@ -19,11 +20,7 @@ export default function TobBar() {
         </ul>
       </div>
       <div className="topRight">
-        <img
-          className="topImg"
-          src="https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-          alt=""
-        ></img>
+        <img className="topImg" src={Me} alt=""></img>
         <i className="topSearchIcon fas fa-search"></i>
       </div>
     </div>
