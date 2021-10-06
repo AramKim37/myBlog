@@ -1,6 +1,5 @@
 import "./header.css";
-import HeaderImg from "../images/header.jpg";
-
+import HeaderImg from "../../images/header.jpg";
 export default function Header() {
   return (
     <div className="header">

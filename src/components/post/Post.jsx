@@ -1,5 +1,5 @@
 import "./post.css";
-import TwoJack from "../images/5.JPG";
+import TwoJack from "../../images/5.JPG";
 
 export default function Post() {
   return (
