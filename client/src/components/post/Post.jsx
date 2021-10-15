@@ -1,38 +1,31 @@
 import "./post.css";
-import TwoJack from "../../images/5.JPG";
+import { Link } from "react-router-dom";
 
-export default function Post() {
+export default function Post({ post }) {
+  const PF = "http://localhost:5000/images/";
+
   return (
     <div className="post">
-      <img className="post-img" src={TwoJack} alt=""></img>
+      {post.photo && (
+        <img className="post-img" src={PF + post.photo} alt=""></img>
+      )}
+
       <div className="post-info">
         <div className="post-cats">
-          <span className="postCat">Music</span>
-          <span className="postCat">Life</span>
+          {post.categories.map((c) => (
+            <span className="postCat">{c.name}</span>
+          ))}
         </div>
-        <span className="post-title">Lorem ipsum dolor sit amet</span>
+        <Link to={`/post/${post._id}`} className="link">
+          <span className="post-title">{post.title}</span>
+        </Link>
         <hr />
-        <span className="post-date">1 hour ago</span>
+        <span className="post-date">
+          {new Date(post.createdAt).toDateString()}
+        </span>
       </div>
 
-      <p className="post-desc">
-        djhfasjkhfkdjahfkjasdhfiuoewhfoewiuhfwieoufdkjfeopijfepoiwfjewop
-        hfiuweohfoiewuhfweiouhfewiouhfewoiufhweoiuffdsjfsdajfpoidjsafpoidjsafpoidjs
-        djhfasjkhfkdjahfkjasdhfiuoewhfoewiuhfwieoufdkjfeopijfepoiwfjewop
-        hfiuweohfoiewuhfweiouhfewiouhfewoiufhweoiuffdsjfsdajfpoidjsafpoidjsafpoidjs
-        djhfasjkhfkdjahfkjasdhfiuoewhfoewiuhfwieoufdkjfeopijfepoiwfjewop
-        hfiuweohfoiewuhfweiouhfewiouhfewoiufhweoiuffdsjfsdajfpoidjsafpoidjsafpoidjs
-        djhfasjkhfkdjahfkjasdhfiuoewhfoewiuhfwieoufdkjfeopijfepoiwfjewop
-        hfiuweohfoiewuhfweiouhfewiouhfewoiufhweoiuffdsjfsdajfpoidjsafpoidjsafpoidjs
-        djhfasjkhfkdjahfkjasdhfiuoewhfoewiuhfwieoufdkjfeopijfepoiwfjewop
-        hfiuweohfoiewuhfweiouhfewiouhfewoiufhweoiuffdsjfsdajfpoidjsafpoidjsafpoidjs
-        djhfasjkhfkdjahfkjasdhfiuoewhfoewiuhfwieoufdkjfeopijfepoiwfjewop
-        hfiuweohfoiewuhfweiouhfewiouhfewoiufhweoiuffdsjfsdajfpoidjsafpoidjsafpoidjs
-        djhfasjkhfkdjahfkjasdhfiuoewhfoewiuhfwieoufdkjfeopijfepoiwfjewop
-        hfiuweohfoiewuhfweiouhfewiouhfewoiufhweoiuffdsjfsdajfpoidjsafpoidjsafpoidjs
-        djhfasjkhfkdjahfkjasdhfiuoewhfoewiuhfwieoufdkjfeopijfepoiwfjewop
-        hfiuweohfoiewuhfweiouhfewiouhfewoiufhweoiuffdsjfsdajfpoidjsafpoidjsafpoidjs
-      </p>
+      <p className="post-desc">{post.desc}</p>
     </div>
   );
 }

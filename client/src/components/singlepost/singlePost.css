@@ -1,10 +1,14 @@
 .singlePost {
   flex: 9;
+  margin: 20px;
+  height: 90vh;
 }
 
 .single-post-wrapper {
   padding: 20px;
   padding-right: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .singlePostImg {
@@ -15,6 +19,7 @@
 
 .single-post-title {
   text-align: center;
+
   margin: 10px;
   font-size: 28px;
 }
@@ -25,6 +30,7 @@
 }
 
 .singlePost-icon {
+  float: right;
   margin-left: 10px;
   cursor: pointer;
 }
@@ -46,16 +52,62 @@
   color: #b39656;
 }
 
-.singlePost-desc {
+.singlePostDesc {
   margin-left: 20px;
   color: #666;
   font-size: 18px;
   line-height: 25px;
 }
 
-.singlePost-desc:first-letter {
+.singlePostDesc:first-letter {
   margin-left: 20px;
   font-size: 30px;
   font-weight: 600;
   text-transform: uppercase;
+}
+
+.singlePostDescInput {
+  border: none;
+  color: #666;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.singlePostDescInput:focus {
+  outline: none;
+}
+.singlePostButton {
+  width: 100px;
+  border: none;
+  background-color: teal;
+  padding: 5px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  align-self: flex-end;
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .singlePost {
+    justify-content: center;
+  }
+
+  .singlePost-icon {
+    font-size: 20px;
+    margin: 5px;
+  }
+
+  .singlePost-info {
+    font-size: 12px;
+  }
+
+  .single-post-title {
+    font-size: 20px;
+  }
+
+  .singlePostDesc {
+    font-size: 12px;
+    line-height: 20px;
+  }
 }

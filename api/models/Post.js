@@ -13,7 +13,7 @@ const PostShcema = new mongoose.Schema(
     },
     username: {
       type: String,
-      required: ture,
+      required: true,
     },
     categories: {
       type: Array,

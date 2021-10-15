@@ -1,8 +1,11 @@
 import "./settings.css";
 import SideBar from "../../components/sidebar/SideBar";
-import TwoJack from "../../images/5.JPG";
+import { Context } from "../../context/Context";
+import { useContext } from "react";
 
 export default function Settings() {
+  const { user } = useContext(Context);
+
   return (
     <div className="setting">
       <div className="setting-wrapper">
@@ -13,7 +16,7 @@ export default function Settings() {
         <form className="setting-form">
           <label>Profile picture</label>
           <div className="setting-picture">
-            <img src={TwoJack} alt=""></img>
+            <img src={user.profilePic} alt=""></img>
             <label htmlFor="fileInput">
               <i className="setting-pictureIcon far fa-user-circle"></i>
             </label>

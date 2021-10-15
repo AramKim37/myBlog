@@ -1,3 +1,14 @@
 .home {
   display: flex;
 }
+
+@media screen and (max-width: 768px) {
+  .home {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .home-posts {
+    width: 80px;
+  }
+}

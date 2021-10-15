@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const userShcema = new mongoose.Schema(
+const UserSchema = new mongoose.Schema(
   {
     username: {
       type: String,
@@ -18,11 +18,10 @@ const userShcema = new mongoose.Schema(
     },
     profilePic: {
       type: String,
-      required: true,
       default: "",
     },
   },
   { timestamps: true }
 );
 
-module.exports = mongoose.model("User", userShcema);
+module.exports = mongoose.model("User", UserSchema);
